@@ -1,0 +1,38 @@
+/* _social.scss */
+
+.social
+{
+	@extend .btn;
+	margin-bottom: $base-size-fallback * 0.5;
+	margin-bottom: $base-size * 0.5;
+}
+
+.social__facebook
+{
+	background: #3B599A;
+}
+
+.social__twitter
+{
+	background: #2CA9E1;
+}
+
+.social__google
+{
+	background: #dd4b39;
+}
+
+.social__instagram
+{
+	background: #3F729B;	
+}
+
+.social__rss
+{
+	background: #F26722;	
+}
+
+.social__podcast
+{
+	background: #006892;
+}

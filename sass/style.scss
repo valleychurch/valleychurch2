@@ -1,0 +1,28 @@
+/*
+Theme Name: Valley Church 2.4.1
+Theme URI: http://valleychurch.eu
+Version: 2.4.1
+Author: Rick Butterfield
+Author URI: http://valleychurch.eu
+*/
+
+@import "compass";
+@import 'mixins';
+@import 'changelog';
+@import 'vars';
+@import 'reset';
+@import 'shared';
+@import 'clearfix';
+@import 'type';
+@import 'main';
+@import 'media';
+
+@import 'structure';
+@import 'header';
+@import 'nav';
+@import 'footer';
+@import 'page';
+@import 'search';
+@import 'slider';
+@import 'home';
+@import 'social';

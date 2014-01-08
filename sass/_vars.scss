@@ -1,0 +1,23 @@
+$base-font-stack: "open-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$base-size: 1rem;
+$base-size-fallback: 16px;
+
+$base-line-height: 1.5;
+$base-line-height-fallback: $base-size-fallback * $base-line-height;
+
+$base-border-radius: 4px;
+
+$base-max-width-multiplier: 70;
+$base-max-width: $base-size * $base-max-width-multiplier;
+$base-max-width-fallback: $base-size-fallback * $base-max-width-multiplier;
+
+$hero: #0B94A5;
+$sidekick: complement($hero);
+$inverse: invert($hero);
+$villain: #292929;
+$ui: #CCC;
+$bg: #E8E8E8;
+
+$default-text-shadow-color: $villain;
+$default-text-shadow-blur: 6px;

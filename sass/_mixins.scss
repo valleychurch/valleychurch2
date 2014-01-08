@@ -1,0 +1,16 @@
+/* _mixins.scss */
+
+@mixin margin($top, $right, $bottom, $left) {
+	margin: round($base-size-fallback * $top) round($base-size-fallback * $right) round($base-size-fallback * $bottom) round($base-size-fallback * $left);
+	margin: ($base-size * $top) ($base-size * $right) ($base-size * $bottom) ($base-size * $left);
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+	padding: round($base-size-fallback * $top) round($base-size-fallback * $right) round($base-size-fallback * $bottom) round($base-size-fallback * $left);
+	padding: ($base-size * $top) ($base-size * $right) ($base-size * $bottom) ($base-size * $left);
+}
+
+@mixin font-size($size) {
+	font-size: round($base-size-fallback * $size);
+	font-size: ($base-size * $size);
+}

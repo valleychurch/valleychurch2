@@ -1,0 +1,22 @@
+/* _main.scss */
+
+html
+{
+	font-size: $base-size-fallback;
+}
+
+body
+{
+	font-size: $base-size-fallback;
+	font-size: $base-size;
+	font-family: $base-font-stack;
+	color: $villain;
+	line-height: $base-line-height;
+	background: $bg;
+
+	@media screen and (max-width: 50rem)
+	{
+		font-size: $base-size-fallback * 0.875;
+		font-size: $base-size * 0.875;
+	}
+}

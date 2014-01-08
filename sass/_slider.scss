@@ -1,0 +1,177 @@
+/* _slider.scss */
+
+.container--home__slider
+{
+	@extend .margin-bottom;
+	position: relative;
+
+	@media screen and (max-width: 50rem)
+	{
+		padding: 0;
+	}
+
+	@media screen and (max-width: 40rem)
+	{
+		margin-bottom: 0 !important;
+	}
+}
+
+.slides
+{
+	@extend .unstyled;
+	position: relative;
+
+	li
+	{
+		-webkit-backface-visibility: hidden;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0;
+		top: 0;
+
+		a
+		{
+			display: block;
+		}
+
+		&:first-child
+		{
+			@extend .left;
+			position: relative;
+			display: block;
+		}
+	}
+
+	img
+	{
+		@extend .left;
+		display: block;
+		height: auto;
+		width: 100%;
+	}
+}
+
+.slide-control
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	.rslides_nav
+	{
+		position: absolute;
+		top: 50%;
+		margin-top: -($base-size-fallback * 1.5);
+		margin-top: -($base-size * 1.5);
+		@include opacity(0.4);
+		@include single-transition(opacity, 0.1s, ease-in-out);
+		z-index: 5;
+
+		&.prev
+		{
+			left: $base-size-fallback * 1.5;
+			left: $base-size * 1.5;
+
+			@media screen and (max-width: 60rem)
+			{
+				left: $base-size-fallback * 0.75;
+				left: $base-size * 0.75;
+			}
+
+			@media screen and (max-width: 50rem)
+			{
+				left: $base-size-fallback * 1;
+				left: $base-size * 1;
+			}
+		}
+
+		&.next
+		{
+			right: $base-size-fallback * 1.5;
+			right: $base-size * 1.5;
+
+			@media screen and (max-width: 50rem)
+			{
+				right: $base-size-fallback * 1;
+				right: $base-size * 1;
+			}
+
+			@media screen and (max-width: 60rem)
+			{
+				right: $base-size-fallback * 0.75;
+				right: $base-size * 0.75;
+			}
+		}
+
+		&:hover
+		{
+			@include opacity(0.6);
+		}
+
+		&:active,
+		&:focus
+		{
+			@include opacity(0.9);
+		}
+
+		@media screen and (max-width: 40rem)
+		{
+			top: auto;
+			bottom: $base-size-fallback * 0.5;
+			bottom: $base-size * 0.5;
+		}
+	}
+
+	.rslides_tabs
+	{
+		@extend .unstyled;
+		position: absolute;
+		bottom: $base-size-fallback;
+		bottom: $base-size;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		z-index: 8;
+		margin-bottom: 0;
+		text-align: center;
+		width: 75%;
+
+		li
+		{
+			width: $base-size-fallback * 1.25;
+			width: $base-size * 1.25;
+			height: $base-size-fallback * 1.25;
+			height: $base-size * 1.25;
+			text-align: center;
+			margin-right: 6px;
+			display: inline-block;
+
+			&.rslides_here a
+			{
+				background: white;
+			}
+		}
+
+		a
+		{
+			@extend .hide__text;
+			display: inline-block;
+			width: $base-size-fallback * 1.25;
+			width: $base-size * 1.25;
+			height: $base-size-fallback * 1.25;
+			height: $base-size * 1.25;
+			background: $hero;
+			@include border-radius(12px);
+			@include box-shadow($villain, 0, 0, 6px);
+		}
+
+		@media screen and (max-width: 40rem) {
+			bottom: $base-size-fallback * 0.5;
+			bottom: $base-size * 0.5;
+		}
+	}
+}

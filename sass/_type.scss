@@ -1,0 +1,200 @@
+/* Large */
+.giga
+{
+    font-size: $base-size-fallback * 3;
+    font-size: $base-size * 3;
+
+    @media screen and (max-width: 50rem)
+    {
+        font-size: $base-size-fallback * 2.25;
+        font-size: $base-size * 2.25;
+    }
+}
+
+.mega
+{
+    font-size: $base-size-fallback * 2.75;
+    font-size: $base-size * 2.75;
+
+    @media screen and (max-width: 50rem)
+    {
+        font-size: $base-size-fallback * 2.125;
+        font-size: $base-size * 2.125;
+    }
+}
+
+.kilo
+{
+    font-size: $base-size-fallback * 2.5;
+    font-size: $base-size * 2.5;
+
+    @media screen and (max-width: 50rem)
+    {
+        font-size: $base-size-fallback * 2;
+        font-size: $base-size * 2;
+    }
+}
+
+.giga,
+.mega,
+.kilo
+{
+    letter-spacing: -1px;
+}
+
+/* Headings */
+/* Generic heading class, as per: jsfiddle.net/csswizardry/yFQDP */
+
+h1, .alpha
+{
+    font-size: $base-size-fallback * 2.25;
+    font-size: $base-size * 2.25;
+
+    @media screen and (max-width: 50rem)
+    {
+        font-size: $base-size-fallback * 1.75;
+        font-size: $base-size * 1.75;
+    }
+}
+
+h2, .beta
+{
+    font-size: $base-size-fallback * 2;
+    font-size: $base-size * 2;
+
+    @media screen and (max-width: 50rem)
+    {
+        font-size: $base-size-fallback * 1.5;
+        font-size: $base-size * 1.5;
+    }
+}
+
+h3, .gamma
+{
+    font-size: $base-size-fallback * 1.75;
+    font-size: $base-size * 1.75;
+
+    @media screen and (max-width: 50rem)
+    {
+        font-size: $base-size-fallback * 1.25;
+        font-size: $base-size * 1.25;
+    }
+}
+
+h4, .delta
+{
+    font-size: $base-size-fallback * 1.5;
+    font-size: $base-size * 1.5;
+
+    @media screen and (max-width: 50rem)
+    {
+        font-size: $base-size-fallback * 1.125;
+        font-size: $base-size * 1.125;
+    }
+}
+
+h5, .epsilon
+{
+    font-size: $base-size-fallback * 1.25;
+    font-size: $base-size * 1.25;
+
+    @media screen and (max-width: 50rem)
+    {
+        font-size: $base-size-fallback * 1.125;
+        font-size: $base-size * 1.125;
+    }
+}
+
+h6, .zeta
+{
+    font-size: $base-size-fallback;
+    font-size: $base-size;
+}
+
+h1, h2, h3, h4, h5, h6,
+.alpha, .beta, .gamma, .delta, .epsilon, .zeta
+{
+    text-rendering: optimizeLegibility;
+    @include single-transition(font-size, 0.1s, ease-in-out);
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* Small */
+small,
+.milli
+{
+    font-size: $base-size-fallback * 0.875;
+    font-size: $base-size * 0.875;
+}
+
+.tiny
+{
+    font-size: $base-size-fallback * 0.8125;
+    font-size: $base-size * 0.8125; 
+}
+
+/* Different weights */
+.lite
+{
+    font-style: normal;
+    font-weight: 300;
+}
+
+.heavy
+{
+    font-style: normal;
+    font-weight: 800;
+}
+
+/*--- LINKS ---*/
+a
+{
+    color: $hero;
+}
+
+    a:hover
+    {
+        color: $villain;
+    }
+
+    a:focus,
+    a:active
+    {
+    }
+
+p a
+{
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+/*--- LISTS ---*/
+li > ul,
+li > ol
+{
+    margin-bottom: 0;
+}
+
+/*--- BLOCKQUOTE ---*/
+blockquote
+{
+    border-left: 4px solid $hero;
+    margin-left: -($base-size-fallback * 1.25);
+    margin-left: -($base-size * 1.25);
+    padding-left: $base-size-fallback;
+    padding-left: $base-size;
+    font-style: italic;
+    color: lighten($villain, 10%);
+}

@@ -1,0 +1,64 @@
+/* _media.scss */
+
+.media {
+    @extend .cf;
+    display: block;
+}
+    .media__img {
+        @extend .left;
+        margin-right: $base-size-fallback;
+        margin-right: $base-size;
+
+        &.col--quarter
+        {
+            width: 50%;
+        }
+    }
+    /**
+     * Reversed image location (right instead of left).
+     */
+    .media__img--rev {
+        @extend .right;
+        margin-left: $base-size-fallback * 0.5;
+        margin-left: $base-size * 0.5;
+    }
+
+    .media__img,
+    .media__img--rev
+    {
+        &,
+        img
+        {
+            @media screen and (max-width: 45rem)
+            {
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+
+        @media screen and (max-width: 45rem)
+        {
+            display: block;
+            float: none;
+            margin-bottom: $base-size-fallback;
+            margin-bottom: $base-size;
+        }
+    }
+
+        .media__img img,
+        .media__img--rev img {
+            display: block;
+
+            .ie8 &
+            {
+                width: auto;
+            }
+        }
+
+    .media__body {
+        overflow: hidden;
+    }
+        .media__body,
+        .media__body > :last-child {
+            margin-bottom:0;
+        }

@@ -1,0 +1,74 @@
+/* _search.scss */
+
+.search-form
+{
+	//@extend .cf;
+	@extend .no-margin-bottom;
+	display: table;
+	border-collapse: separate;
+	position: relative;
+
+	footer &
+	{
+		//@extend .right;
+
+	}
+
+	.search__field
+	{
+		//@extend .left;
+		@include single-transition(all, 0.1s, ease-in-out);
+		@include border-radius(2px 0 0 2px);
+		display: table-cell;
+		vertical-align: middle;
+		font-size: $base-size-fallback * 0.875;
+		font-size: $base-size * 0.875;
+		height: $base-size-fallback * 2;
+		height: $base-size * 2;
+	 	background: $ui;
+	 	border: 1px solid $ui;
+	 	border-right: none;
+	    width: 100%;
+	    -webkit-appearance: none;
+
+	    &:focus
+	    {
+	    	background: white;
+
+	    	+ .search__button button
+	    	{
+	    		background: #888;
+	    	}
+	    }
+	}
+
+	.search__button
+	{
+		display: table-cell;
+		width: 1%;
+		white-space: nowrap;
+		vertical-align: middle;		
+
+	 	button
+	 	{
+	 		@include single-transition(all, 0.1s, ease-in-out);
+			@include border-radius(0 2px 2px 0);
+			background: $hero;
+			margin: 0;
+			padding: 0;
+			border: none;
+			width: $base-size-fallback * 2;
+			width: $base-size * 2;
+			height: $base-size-fallback * 2;
+			height: $base-size * 2;
+			color: white;
+			-webkit-appearance: none;
+
+			&:hover
+		    {
+		    	background: #888;
+		    	cursor: pointer;
+		    }
+	 	}
+	}
+}

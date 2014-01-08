@@ -1,0 +1,84 @@
+/* _footer.scss */
+
+.container--footer
+{
+	@extend .cf;
+	padding: ($base-size-fallback * 0.5) 0;
+	padding: ($base-size * 0.5) 0;
+	margin-bottom: $base-size-fallback;
+	margin-bottom: $base-size;
+
+	.col
+	{
+		@media screen and (max-width: 50rem)
+		{
+			width: 100%;
+			float: none;
+		}
+	}
+
+	.container
+	{
+
+	}
+}
+
+.logo-mark-footer
+{
+	max-width: $base-size-fallback * 2.375;
+	width: $base-size-fallback * 2.375;
+	width: $base-size * 2.375;
+	height: $base-size-fallback * 2.375;
+	height: $base-size * 2.375;
+}
+
+.copyright
+{
+	// @extend .left;
+	// @extend .no-margin-bottom;
+	@extend .tiny;
+	// margin-top: $base-size-fallback * 0.375;
+	// margin-top: $base-size * 0.375;
+	// margin: ($base-size-fallback * 0.5) 0 0 ($base-size-fallback * 0.5);
+	// margin: ($base-size * 0.5) 0 0 ($base-size * 0.5);
+
+	@media screen and (max-width: 50rem)
+	{
+		margin-bottom: $base-size-fallback;
+		margin-bottom: $base-size;
+	}
+}
+
+.social
+{
+	@extend .unstyled;
+
+	.social-icon
+	{
+		@extend .show;
+		@extend .left;
+
+	    height: $base-size-fallback * 1.875;
+	    height: $base-size * 1.875;
+	    width: $base-size-fallback * 1.75;
+	    width: $base-size * 1.75;
+	    margin-left: 4px;
+	    overflow: hidden;
+
+	    &:first-child
+	    {
+	    	margin-left: 0;
+	    }
+
+	    a
+	    {
+	    	@extend .show;
+	    	color: white;
+	    }
+
+	    .facebook a:hover
+	    {
+	    	color: #3B599A;
+	    }
+	}
+}

@@ -1,0 +1,141 @@
+/* _shared.scss */
+
+/* Common margin-bottom for vertical rhythm. */
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+p,
+table,
+form,
+pre,
+hr,
+header,
+blockquote,
+article,
+.source,
+.margin-bottom
+{
+    margin-bottom: $base-size-fallback;
+    margin-bottom: $base-size;
+}
+
+audio
+{
+    max-width: 100%;
+}
+
+/* Default indentation value for lists etc. */
+ul, ol, dd
+{
+    margin-left: $base-size-fallback * 1.5;
+    margin-left: $base-size * 1.5;
+}
+
+.unstyled
+{
+    margin-left: 0;
+    list-style-type: none;
+}
+
+label,
+.text-input,
+textarea,
+.btn
+{
+    cursor: pointer;
+}
+
+    .text-input:active,
+    .text-input:focus,
+    textarea:active,
+    textarea:focus
+    {
+        cursor: text;
+    }
+
+.show
+{
+    display: block !important;
+}
+
+.hide
+{
+    display: none !important;
+}
+
+.hide__text
+{
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+.center
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.no-margin-bottom,
+.nobtmmargin
+{
+    margin-bottom: 0;
+}
+
+hr
+{
+    border: none;
+    border-bottom: 1px solid $ui;
+    background: $ui;
+    color: $ui; /*IE fix*/
+
+    // article + &
+    // {
+    //     margin: $base-size-fallback * 0.5 0 $base-size-fallback * 2;
+    //     margin: $base-size * 0.5 0 $base-size * 2;
+    // }
+}
+
+.btn,
+.more-link
+{
+    background: $hero;
+    color: white;
+    display: inline-block;
+    font-weight: 700;
+    padding: 5px 12px;
+    @include single-transition(background, 0.1s, ease-in-out);
+    @include border-radius($base-border-radius);
+    border: none;
+    -webkit-appearance: none;
+}
+
+    .btn:hover,
+    .more-link:hover,
+    .btn:focus,
+    .more-link:focus
+    {
+        color: white;
+        background: $villain;
+    }
+
+::selection,
+::-moz-selection
+{
+    background: $hero;
+    color: white;
+}

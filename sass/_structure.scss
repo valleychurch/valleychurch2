@@ -1,0 +1,99 @@
+/* _structure.scss */
+
+.col
+{
+	padding: 0 ($base-size-fallback);
+	padding: 0 ($base-size);
+    @include single-transition(all, 0.1s, ease-in-out);
+
+  //   @media screen and (max-width: 50rem)
+  //   {
+  //   	padding: 0 ($base-size-fallback);
+		// padding: 0 ($base-size);
+  //   }
+}
+
+.col--half
+{
+	width: 50%;
+}
+
+.col--quarter
+{
+	width: 25%;
+}
+
+.col--third
+{
+	width: 33.33%;
+}
+
+.col--two--thirds
+{
+	width: 66.66%;
+}
+
+.col--three--quarters
+{
+	width: 75%;
+}
+
+.wrap
+{
+	max-width: $base-max-width-fallback;
+	max-width: $base-max-width;
+}
+
+.wrap--thin
+{
+	max-width: $base-size-fallback * 45;
+	max-width: $base-size * 45;
+}
+
+.container
+{
+	@extend .wrap;
+	@extend .center;
+	@extend .cf;
+
+	&.col,
+	& .col
+	{
+		.content
+		{
+			padding: 0;
+		}
+	}
+}
+
+.container--padded
+{
+	@extend .col;
+}
+
+.content
+{
+	@extend .wrap--thin;
+	@extend .center;
+	@extend .cf;
+	padding: $base-size-fallback $base-size-fallback 0 $base-size-fallback;
+	padding: $base-size $base-size 0 $base-size;
+
+	& + .content
+	{
+		margin-top: 0;
+		padding-top: 0;
+	}
+}
+
+.content--wide
+{
+	max-width: 100%;
+
+	.aligncenter
+	{
+		width: 100% !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
