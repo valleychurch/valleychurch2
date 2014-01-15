@@ -8,11 +8,6 @@
         @extend .left;
         margin-right: $base-size-fallback;
         margin-right: $base-size;
-
-        &.col--quarter
-        {
-            width: 50%;
-        }
     }
     /**
      * Reversed image location (right instead of left).

@@ -1,18 +1,11 @@
-<?php
-/**
- * @package WordPress
- * @subpackage Default_Theme
- */
-
-get_header(); ?>
+<?php get_header(); ?>
 
 <section class="container container--post">
 
   <div class="col col--third left cf">
     <div class="content">
       <h1 class="no-margin-bottom"><a href="/thelatest">The Latest</a></h1>
-      <h3 class="delta lite">Catch up with goings-on in the life of Valley Church!</h3>
-      <p>We're all about <a href="/about">empowering you to be all that God's called you to be</a>, so check back weekly for inspirational thoughts, blogs and messages from our Pastors and team.</p>
+      <h3 class="beta lite"><?php single_cat_title(); ?></h3>
 
       <p class="no-margin-bottom"><strong>Categories</strong></p>
       <ul class="categories unstyled">

@@ -34,7 +34,8 @@
 	@extend .container--home;
 
 	.page-template-default &,
-	.page-template-connect-template-php &
+	.page-template-connect-template-php &,
+	.single-post &
 	{
 		padding: $base-size-fallback * 1.5;
 		padding: $base-size * 1.5;
@@ -46,7 +47,7 @@
 	}
 
 	.blog &,
-	.single-post &,
+	.archive &,
 	.page-template-messages-template-php &,
 	.page-template-events-template-php &
 	{
@@ -77,9 +78,20 @@
 
 .featured
 {
+	font-size: 0px;
+
 	img
 	{
 		width: 100%;
+	}
+}
+
+.meta
+{
+	.meta__category
+	{
+		text-transform: uppercase;
+		font-weight: 600;
 	}
 }
 
@@ -121,6 +133,15 @@
 		margin-left: -$base-size;
 		margin-right: -$base-size-fallback;
 		margin-right: -$base-size;
+	}
+}
+
+.comments
+{
+	@media screen and (max-width: 50rem)
+	{
+		padding: 0 $base-size-fallback;
+		padding: 0 $base-size;
 	}
 }
 

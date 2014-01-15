@@ -94,13 +94,13 @@
       <div class="logo-container">
         <a href="/" class="logo" alt="Valley Church" title="Valley Church">
           <svg class="logo-mark">
-            <image xlink:href="<?php echo valleycdn(); ?>/img/icons/icon.svg" src="<?php echo valleycdn(); ?>/img/icons/icon.png" width="100%" height="100%" class="logo-mark" />
+            <image xlink:href="<?php echo valleycdn(); ?>/img/icons/icon.svg" src="<?php echo valleycdn(); ?>/img/icons/icon.png" width="100%" height="100%" class="logo-mark"></image>
           </svg>
           <svg width="231" height="36" class="logo-word">
-            <image xlink:href="<?php echo valleycdn(); ?>/img/logos/logo.svg" src="<?php echo valleycdn(); ?>/img/logos/logo.png" width="231" height="36" class="logo-word" />
+            <image xlink:href="<?php echo valleycdn(); ?>/img/logos/logo.svg" src="<?php echo valleycdn(); ?>/img/logos/logo.png" width="231" height="36" class="logo-word"></image>
           </svg>
           <svg width="97" height="50" class="logo-word-stacked">
-            <image xlink:href="<?php echo valleycdn(); ?>/img/logos/logo-stacked.svg" src="<?php echo valleycdn(); ?>/img/logos/logo-stacked.png" width="97" height="50" class="logo-word-stacked" />
+            <image xlink:href="<?php echo valleycdn(); ?>/img/logos/logo-stacked.svg" src="<?php echo valleycdn(); ?>/img/logos/logo-stacked.png" width="97" height="50" class="logo-word-stacked"></image>
           </svg>
         </a>
       </div>

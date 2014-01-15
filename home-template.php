@@ -82,6 +82,8 @@ get_header(); ?>
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+    <?php global $more; $more = 0; ?>
+
     <article>
 
       <?php
@@ -100,16 +102,26 @@ get_header(); ?>
       <?php } ?>
 
       <div class="content">
-        <h3 class="gamma no-margin-bottom">
+        <span class="meta milli">
+          <span class="meta__category">
+            <?php the_category(', '); ?>
+          </span>
+          &bull;
+          <span class="meta__date">
+            <time datetime="<?php the_time('c'); ?>"><?php the_time('F jS, Y'); ?></time>
+          </span>
+          &bull;
+          <span class="meta__author">
+            By <span class="meta__author__name"><?php the_author();?></span>
+          </span>
+        </span>
+        <h3 class="alpha">
           <a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
             <?php the_title(); ?>
           </a>
         </h3>
-        <p class="epsilon lite">
-          Posted <time datetime="<?php the_time('c'); ?>"><?php the_time('F jS, Y'); ?></time> by <?php the_author();?>
-        </p>
 
-        <?php the_content(); ?>
+        <?php the_content('Read more'); ?>
 
         <p>
           <?php comments_popup_link(); ?>
