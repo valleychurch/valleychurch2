@@ -53,7 +53,7 @@
 
   <?php endif; ?>
 
-  <div class="comments">
+  <div class="comments content">
     <?php comments_template(); ?>
   </div>
 

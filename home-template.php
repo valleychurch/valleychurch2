@@ -146,7 +146,7 @@ get_header(); ?>
 
       function filter_where( $where = '' ) {
         // posts in the last 8 days (accounts for 1 week of messages)
-        $where .= " AND post_date > '" . date('Y-m-d', strtotime('-7 days')) . "'";
+        $where .= " AND post_date > '" . date('Y-m-d', strtotime('-6 days')) . "'";
         return $where;
       }
 
