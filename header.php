@@ -50,9 +50,9 @@
   <link rel="dns-prefetch" href="//cdn2.valleychurch.eu" />
 
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
   <!--[if IE 7]>
-  <link rel="stylesheet" type="text/css" href="<?php echo valleycdn(); ?>/font-awesome-ie7.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo valleycdn(); ?>/font-awesome-ie7.min.css" />
   <![endif]-->
 
   <link rel="shortcut icon" href="<?php echo valleycdn(); ?>/img/icons/favicon.ico" />
@@ -82,12 +82,6 @@
 </head>
 
 <body <?php body_class('vc2'); ?>>
-
-  <!-- ClickTale Top part -->
-  <script type="text/javascript">
-  var WRInitTime=(new Date()).getTime();
-  </script>
-  <!-- ClickTale end of Top part -->
 
   <header>
     <section class="container container--header">
