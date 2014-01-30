@@ -24,13 +24,26 @@ header
 .logo-container
 {
 	@extend .left;
+	margin: auto;
 	padding: ($base-size-fallback * 0.5) 0;
 	padding: ($base-size * 0.5) 0;
+
+	@media screen and (max-width: 58rem)
+	{
+		float: none;
+	}
 }
 
 .logo
 {
 	font-size: 0;
+	display: block;
+
+	@media screen and (max-width: 58rem)
+	{
+		margin: auto;
+		text-align: center;
+	}
 }
 
 .logo-mark
@@ -45,6 +58,15 @@ header
 	.ie8 &
 	{
 		max-width: $base-size-fallback * 3.5 !important;
+	}
+
+	@media screen and (max-width: 58rem)
+	{
+		float: none;
+		width: $base-size-fallback * 2;
+		width: $base-size * 2;
+		height: $base-size-fallback * 2;
+		height: $base-size * 2;
 	}
 }
 
@@ -61,9 +83,18 @@ header
     	height: 36px;
     }
 
-    @media screen and (max-width: 60rem)
+    @media screen and (max-width: 62rem)
+	{
+		display: none;
+	}
+
+    @media screen and (max-width: 58rem)
     {
-    	display: none;
+    	float: none;
+    	display: inline;
+    	width: 180px;
+    	height: 28px;
+    	margin: 0.25rem 0 0 0.5rem;
     }
 }
 
@@ -71,13 +102,14 @@ header
 {
 	@extend .left;
 	margin-top: 3px;
+	display: none;
 
-	.ie8 &
+	@media screen and (max-width: 62rem)
 	{
-		display: none;
+		display: block;
 	}
 
-	@media screen and (min-width: 60rem)
+	@media screen and (max-width: 58rem)
 	{
 		display: none;
 	}

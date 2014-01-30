@@ -1,8 +1,14 @@
 /* _main.scss */
 
+%full-height
+{
+	height: 100%;
+}
+
 html
 {
 	font-size: $base-size-fallback;
+	@extend %full-height;
 }
 
 body
@@ -13,10 +19,50 @@ body
 	color: $villain;
 	line-height: $base-line-height;
 	background: $bg;
+	@extend %full-height;
 
 	@media screen and (max-width: 50rem)
 	{
 		font-size: $base-size-fallback * 0.875;
 		font-size: $base-size * 0.875;
+	}
+}
+
+.page-wrap
+{
+	position: relative;
+	@extend %full-height;
+
+	&.menu-open
+	{
+		overflow: hidden;
+	}
+}
+
+.content-wrap
+{
+	@extend %full-height;
+
+	/* Fallback for older browsers - first because of the cascade */
+	.no-csstransforms3d &
+	{
+		@include single-transition(left, 0.5s, ease);
+		left: 0;
+	}
+
+	.no-csstransforms3d .menu-open &
+	{
+		left: 75%;
+	}
+
+	.csstransforms3d &
+	{
+		@include single-transition(transform, 0.5s, ease);
+		@include translate3d(0%, 0, 0);
+	}
+
+	.csstransforms3d .menu-open &
+	{
+		@include translate3d(75%, 0, 0);
 	}
 }

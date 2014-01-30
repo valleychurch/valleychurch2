@@ -1,23 +1,40 @@
   <?php wp_footer(); ?>
 
-  <footer class="container container--footer">
-    <div class="col col--three--quarters left cf">
-      <div class="media">
-        <a class="logo media__img" href="/" alt="Valley Church" title="Valley Church">
-          <svg width="32" height="32" class="logo-mark-footer">
-            <image xlink:href="<?php echo valleycdn(); ?>/img/icons/icon.svg" src="<?php echo valleycdn(); ?>/img/icons/icon.png" width="100%" height="100%" class="logo-mark-footer"></image>
-          </svg>
-        </a>
-        <div class="copyright media__body">
-          <p class="no-margin-bottom"><strong>&copy; Valley Church 2008&ndash;<?php echo date("Y"); ?></strong>&mdash;Empowering A New Generation</p>
-          <p><a href="http://freemethodist.org.uk" target="_blank">A Free Methodist UK Church</a> &bull; <a href="http://www.charitycommission.gov.uk/search-for-a-charity/?txt=1125080" target="_blank">Registered Charity No. 1125080</a> &bull; <a href="/privacy">Privacy &amp; Cookie Policy</a></p>
+      <footer class="container container--footer">
+        <div class="col col--three--quarters left cf">
+          <div class="media">
+            <a class="logo media__img" href="/" alt="Valley Church" title="Valley Church">
+              <svg width="32" height="32" class="logo-mark-footer">
+                <image xlink:href="<?php echo valleycdn(); ?>/img/icons/icon.svg" src="<?php echo valleycdn(); ?>/img/icons/icon.png" width="100%" height="100%" class="logo-mark-footer"></image>
+              </svg>
+            </a>
+            <div class="copyright media__body">
+              <p class="no-margin-bottom"><strong>&copy; Valley Church 2008&ndash;<?php echo date("Y"); ?></strong>&mdash;Empowering A New Generation</p>
+              <p><a href="http://freemethodist.org.uk" target="_blank">A Free Methodist UK Church</a> &bull; <a href="http://www.charitycommission.gov.uk/search-for-a-charity/?txt=1125080" target="_blank">Registered Charity No. 1125080</a> &bull; <a href="/privacy">Privacy &amp; Cookie Policy</a></p>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="col col--quarter left">
+          <?php get_search_form(); ?>
+        </div>
+      </footer>
+
     </div>
-    <div class="col col--quarter left">
-      <?php get_search_form(); ?>
-    </div>
-  </footer>
+    
+  </div>
+
+  <!-- Typekit -->
+  <script src="//use.typekit.net/gga6pzn.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!-- Site JS -->
+  <script src="<?php echo valleycdn(); ?>/js/site.js"></script>
+
+  <!-- IE fixes -->
+  <!--[if lt IE 9]>
+    <script src="<?php echo valleycdn(); ?>/js/respond.js"></script>
+    <script src="<?php echo valleycdn(); ?>/js/rem.min.js"></script> 
+  <![endif]-->
 
   <!-- Google Analytics -->
   <script>

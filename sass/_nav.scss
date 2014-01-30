@@ -1,18 +1,214 @@
 /* _nav.scss */
 
-nav
+/* Main navigation */
+.main-nav
 {
 	@extend .right;
 
-	@media screen and (max-width: 50rem)
+	@media screen and (max-width: 58rem)
 	{
 		display: none;
 	}
 }
 
+/* Side navigation */
+.side-nav
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -75%;
+	height: 100%;
+	width: 75%;
+	background: $villain;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	@include single-box-shadow(#111, -2px, 0px, 8px, -1px, inset);
+
+	/* Fallback for older browsers - first because of the cascade */
+	.no-csstransforms3d &
+	{
+		@include single-transition(left, 0.5s, ease);
+		left: -75%;
+	}
+
+	.no-csstransforms3d .menu-open &
+	{
+		left: 0;
+	}
+
+	/* If the browser supports CSS 3d transforms */
+	.csstransforms3d &
+	{
+		left: auto;
+		@include single-transition(transform, 0.5s, ease);
+		@include translate3d(-100%, 0, 0);
+	}
+
+	.csstransforms3d .menu-open &
+	{
+		@include translate3d(0%, 0, 0);
+	}
+}
+
+/* Override WordPress default class */
+.menu
+{
+	list-style-type: none;
+	z-index: 1000;
+	margin-left: 0;
+
+	/* Main top navigation */
+	.main-nav &
+	{
+		.menu-item
+		{
+			@extend .left;
+			position: relative;
+
+			a
+			{
+				@include font-size(0.938);
+				@include padding(1.5, 0.75, 1.5625, 0.75);
+				display: block;
+				font-weight: 700;
+				color: #FFF;
+
+				&:hover
+				{
+					background: $hero;
+					color: white;
+					cursor: pointer;
+				}
+			}
+
+			.sub-menu
+			{
+				background: $villain;
+				list-style-type: none;
+				z-index: 1000;
+				display: none;
+				position: absolute;
+				top: $base-size-fallback * 4.5;
+				top: $base-size * 4.5;
+				right: 0;
+				width: $base-size-fallback * 12;
+				width: $base-size * 12;
+				margin-left: 0;
+
+				.menu-item
+				{
+					width: 100%;
+
+					a
+					{
+						@include padding(0.1875, 0.75, 0.25, 0.75);
+						font-weight: 400;
+						font-size: round($base-size-fallback * 0.875);
+						font-size: $base-size * 0.875;
+					}
+				}
+
+				.sub-title > a
+				{
+					color: darken($ui, 10%);
+					font-size: $base-size-fallback * 0.8125;
+					font-size: $base-size * 0.8125;
+					padding-top: $base-size-fallback * 0.375;
+					padding-top: $base-size * 0.375;
+
+					&:hover
+					{
+						background: none;
+						cursor: default;
+					}
+				}
+
+				.sub-menu
+				{
+					display: block !important;
+					position: relative;
+					top: 0;
+				}
+			}
+		}
+
+		& > .menu-item:hover
+		{
+			background: $hero;
+
+			& > .sub-menu
+			{
+				.ie8 &
+				{
+					display: block;
+				}
+			}
+		}
+
+		& > .menu-item > a:after
+		{
+			@include padding(0, 0, 0, 0.75);
+			font-family: "FontAwesome";
+	    content: "\f0d7";
+		}
+
+		& > .menu-item > a.active:after
+		{
+			content: "\f0d8";
+		}
+	}
+
+	.side-nav &
+	{
+		.menu-item
+		{
+			a
+			{
+				display: block;
+				padding: $base-size-fallback * 0.5 $base-size-fallback;
+				padding: $base-size * 0.5 $base-size;
+				background: none;
+				color: white;
+				background: darken($villain, 10%);
+				font-weight: 700;
+			}
+		}
+
+		.sub-menu
+		{
+			list-style-type: none;
+			margin: 0;
+
+			.menu-item
+			{
+				a
+				{
+					padding: $base-size-fallback * 0.25 $base-size-fallback;
+					padding: $base-size * 0.25 $base-size;
+					background: none;
+					font-weight: 400;
+				}
+			}
+
+			.sub-title > a
+			{
+				color: darken($ui, 10%);
+				font-size: $base-size-fallback * 0.8125;
+				font-size: $base-size * 0.8125;
+			}
+		}
+	}
+}
+
 .menu-toggle
 {
-	@extend .right;
+	@extend .left;
 
 	&:hover
 	{
@@ -24,18 +220,27 @@ nav
 		display: none;
 	}
 
-	@media screen and (min-width: 50rem)
+	@media screen and (min-width: 58rem)
 	{
 		display: none;
 	}
 
+	@media screen and (max-width: 58rem)
+	{
+		padding: $base-size-fallback $base-size-fallback * 0.9375 $base-size-fallback * 0.9375;
+		padding: $base-size $base-size * 0.9375 $base-size * 0.9375;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: inline-block;
+	    color: white;
+	    line-height: 1;
+	}
+
 	@media screen and (max-width: 50rem)
 	{
-		@include padding(0.9375, 1.125, 0.9375, 1.125);
-		display: inline-block;
-        background: #333333;
-        color: white;
-        line-height: 1;
+		padding: $base-size-fallback * 1.0625 $base-size-fallback * 0.75 $base-size-fallback;
+		padding: $base-size * 1.0625 $base-size * 0.75 $base-size;
 	}
 }
 
@@ -45,159 +250,26 @@ nav
 	color: white;
 }
 
-.menu
+.menu-toggle--close
 {
-	list-style-type: none;
-	z-index: 1000;
-	margin-left: 0;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(red($villain), green($villain), blue($villain), 0.5);
+	z-index: 10000;
 
-	.menu-item
+	.menu-open &
 	{
-		@extend .left;
-		position: relative;
-		//background: $villain;
-
-		a
-		{
-			@include font-size(0.938);
-			@include padding(1.5, 0.75, 1.5625, 0.75);
-			display: block;
-			font-weight: 700;
-			color: #FFF;
-
-			&:hover
-			{
-				background: $hero;
-				color: white;
-				cursor: pointer;
-			}
-
-			@media screen and (max-width: 50rem) 
-			{
-				@include padding(0.75, 0.75, 0.75, 0.75);
-			}
-		}
-
-		@media screen and (max-width: 50rem)
-		{
-			float: none;
-			width: 100%;
-			position: relative;
-		}
+		display: block;
 	}
 
-	& > .menu-item:hover
+	&:hover
 	{
-		background: $hero;
-
-		& > .sub-menu
-		{
-			.ie8 &
-			{
-				display: block;
-			}
-
-			@media screen and (min-width: 50rem)
-			{
-				display: block;
-			}
-		}
-	}
-
-	& > .menu-item > a:after
-	{
-		@include padding(0, 0, 0, 0.75);
-		font-family: "FontAwesome";
-        content: "\f0d7";
-
-        @media screen and (max-width: 50rem)
-        {
-    		position: absolute;
-    		right: $base-size-fallback;
-    		right: $base-size;
-        }
-	}
-
-	& > .menu-item > a.active:after
-	{
-		content: "\f0d8";
-	}
-
-	.sub-menu
-	{
-		background: $villain;
-		list-style-type: none;
-		z-index: 1000;
-		display: none;
-		position: absolute;
-		top: $base-size-fallback * 4.5;
-		top: $base-size * 4.5;
-		right: 0;
-		width: $base-size-fallback * 12;
-		width: $base-size * 12;
-		margin-left: 0;
-
-		.menu-item
-		{
-			width: 100%;
-
-			a
-			{
-				@include padding(0.1875, 0.75, 0.25, 0.75);
-				font-weight: 400;
-				font-size: round($base-size-fallback * 0.875);
-				font-size: $base-size * 0.875;
-			}
-		}
-
-		.sub-title > a
-		{
-			color: darken($ui, 10%);
-			font-size: $base-size-fallback * 0.8125;
-			font-size: $base-size * 0.8125;
-			padding-top: $base-size-fallback * 0.375;
-			padding-top: $base-size * 0.375;
-
-			&:hover
-			{
-				background: none;
-				cursor: default;
-			}
-		}
-
-		.sub-menu
-		{
-			display: block !important;
-			position: relative;
-			top: 0;
-		}
-
-		@media screen and (max-width: 50rem)
-		{
-			position: relative;
-			top: 0;
-			width: 100%;
-		}
-	}
-
-	@media screen and (max-width: 50rem)
-	{
-		float: none;
-		clear: both;
-		position: absolute;
-		top: $base-size-fallback * 4.5;
-		top: $base-size * 4.5;
-		right: $base-size-fallback;
-		right: $base-size;
-		width: $base-size-fallback * 20;
-		width: $base-size * 20;
-		background: $villain;
-	}
-
-	@media screen and (max-width: 30rem)
-	{
-		left: $base-size-fallback;
-		left: $base-size;
-		width: auto;
+		background: rgba(red($hero), green($hero), blue($hero), 0.5);
 	}
 }

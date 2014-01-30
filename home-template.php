@@ -18,15 +18,23 @@ get_header(); ?>
       $wp_query = null;
       $wp_query = new WP_Query($args);
     ?>
-    <ul class="slides">
+    <ul class="slides hisrc">
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+        <?php
+          $img_id = get_field('slider_image');
+          $sm_img = wp_get_attachment_image_src($img_id, 'medium');
+          $md_img = wp_get_attachment_image_src($img_id, 'large');
+          $lg_img = wp_get_attachment_image_src($img_id, 'full');
+        ?>
+
         <li>
           <?php if ( get_field('slider_link') ) { ?>
             <a href="<?php the_field( "slider_link" ); ?>">
-              <img src="<?php the_field( "slider_image" ); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
+              <img src="<?php echo($sm_img[0]); ?>" data-1x="<?php echo($md_img[0]); ?>" data-2x="<?php echo($lg_img[0]); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
             </a>
           <?php } else { ?>
-            <img src="<?php the_field( "slider_image" ); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
+            <img src="<?php echo($sm_img[0]); ?>" data-1x="<?php echo($md_img[0]); ?>" data-2x="<?php echo($lg_img[0]); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
           <?php } ?>
         </li>
       <?php endwhile; else: endif; ?>
