@@ -177,7 +177,7 @@ get_header(); ?>
         <?php the_content(); ?>
 
         <h2>Where do groups meet?</h2>
-        <p>Our connect groups meet all over the region, check out the map below to find one near you! Also, why not <a class="my-location" href="#">show where you are on the map below</a> to make things easier?</p>
+        <p>Our connect groups meet all over the region, check out the map below to find one near you!</p>
         <div class="aligncenter margin-bottom">
           <div class="fluid-width-video-wrapper" id="map-canvas" style="padding-top: 56.2%;"></div>
         </div>
