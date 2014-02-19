@@ -74,7 +74,7 @@
 			a
 			{
 				@include font-size(0.938);
-				@include padding(1.5, 0.75, 1.5625, 0.75);
+				@include padding(1.0625, 0.75, 1, 0.75);
 				display: block;
 				font-weight: 700;
 				color: #FFF;
@@ -94,8 +94,8 @@
 				z-index: 1000;
 				display: none;
 				position: absolute;
-				top: $base-size-fallback * 4.5;
-				top: $base-size * 4.5;
+				top: $base-size-fallback * 3.5;
+				top: $base-size * 3.5;
 				right: 0;
 				width: $base-size-fallback * 12;
 				width: $base-size * 12;

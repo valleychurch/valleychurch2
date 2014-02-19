@@ -6,6 +6,7 @@
 	background: white;
 	padding: ($base-size-fallback * 1.5) ($base-size-fallback * 0.6);
 	padding: ($base-size * 1.5) ($base-size * 0.6);
+	@include single-box-shadow(rgba(0,0,0,0.13), 0px, 1px, 3px);
 
 	// .col
 	// {
@@ -16,6 +17,7 @@
 	@media screen and (max-width: 50rem)
 	{
 		padding: 0;
+		@include single-box-shadow(rgba(0,0,0,0.0), 0px, 0px, 0px);
 	}
 }
 

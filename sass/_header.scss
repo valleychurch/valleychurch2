@@ -49,10 +49,10 @@ header
 .logo-mark
 {
 	@extend .left;
-	width: $base-size-fallback * 3.5;
-	width: $base-size * 3.5;
-	height: $base-size-fallback * 3.5;
-	height: $base-size * 3.5;
+	width: $base-size-fallback * 2.5;
+	width: $base-size * 2.5;
+	height: $base-size-fallback * 2.5;
+	height: $base-size * 2.5;
 	display: inline-block;
 	
 	.ie8 &
@@ -73,7 +73,7 @@ header
 .logo-word
 {
 	@extend .left;
-	@include margin(0.6875, 0, 0, 0.75);
+	@include margin(0.4375, 0, 0, 0.75);
     @include single-transition(margin, 0.1s, ease-in-out);
 
     .ie8 &
@@ -83,10 +83,10 @@ header
     	height: 36px;
     }
 
-    @media screen and (max-width: 62rem)
-	{
-		display: none;
-	}
+ //    @media screen and (max-width: 62rem)
+	// {
+	// 	display: none;
+	// }
 
     @media screen and (max-width: 58rem)
     {
@@ -98,19 +98,19 @@ header
     }
 }
 
-.logo-word-stacked
-{
-	@extend .left;
-	margin-top: 3px;
-	display: none;
+// .logo-word-stacked
+// {
+// 	@extend .left;
+// 	margin-top: 3px;
+// 	display: none;
 
-	@media screen and (max-width: 62rem)
-	{
-		display: block;
-	}
+// 	@media screen and (max-width: 62rem)
+// 	{
+// 		display: block;
+// 	}
 
-	@media screen and (max-width: 58rem)
-	{
-		display: none;
-	}
-}
+// 	@media screen and (max-width: 58rem)
+// 	{
+// 		display: none;
+// 	}
+// }

@@ -13,7 +13,8 @@ function my_custom_login() {
    '<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
     <style type="text/css">
-      body
+      html,
+      body.login
       {
         background: #E8E8E8;
       }

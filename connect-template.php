@@ -133,6 +133,7 @@ get_header(); ?>
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'load', recenter);
 
   google.maps.event.addDomListener(window, 'resize', debounce(recenter,200));
 
@@ -141,6 +142,7 @@ get_header(); ?>
       e.preventDefault();
       myLocation();
     });
+    recenter();
   });
 </script>
 

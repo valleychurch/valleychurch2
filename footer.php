@@ -23,10 +23,6 @@
     
   </div>
 
-  <!-- Typekit -->
-  <script src="//use.typekit.net/gga6pzn.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
-
   <!-- Site JS -->
   <script src="<?php echo valleycdn(); ?>/js/site.js"></script>
 

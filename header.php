@@ -59,9 +59,31 @@
   <link rel="shortcut icon" href="<?php echo valleycdn(); ?>/img/icons/favicon.ico" />
   <link rel="apple-touch-icon-precomposed" href="<?php echo valleycdn(); ?>/img/icons/apple-icon.png" />
 
-  <!-- jQuery and Modernizr -->
+  <!-- jQuery, Modernizr, Debounce -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+  <script>
+    function debounce(func, wait, immediate) {
+      var result;
+      var timeout = null;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) result = func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) result = func.apply(context, args);
+        return result;
+      };
+    }
+  </script>
+
+  <!-- Typekit -->
+  <script src="//use.typekit.net/gga6pzn.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 
   <!-- WordPress head -->
   <?php wp_head(); ?>
@@ -92,12 +114,12 @@
               <svg class="logo-mark">
                 <image xlink:href="<?php echo valleycdn(); ?>/img/icons/icon.svg" src="<?php echo valleycdn(); ?>/img/icons/icon.png" width="100%" height="100%" class="logo-mark"></image>
               </svg>
-              <svg width="231" height="36" class="logo-word">
+              <svg width="193" height="30" class="logo-word">
                 <image xlink:href="<?php echo valleycdn(); ?>/img/logos/logo.svg" src="<?php echo valleycdn(); ?>/img/logos/logo.png" width="100%" height="100%" class="logo-word"></image>
               </svg>
-              <svg width="97" height="50" class="logo-word-stacked">
+              <!-- <svg width="97" height="50" class="logo-word-stacked">
                 <image xlink:href="<?php echo valleycdn(); ?>/img/logos/logo-stacked.svg" src="<?php echo valleycdn(); ?>/img/logos/logo-stacked.png" width="97" height="50" class="logo-word-stacked"></image>
-              </svg>
+              </svg> -->
             </a>
           </div>
           <nav class="main-nav">
