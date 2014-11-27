@@ -1,5 +1,3 @@
-  <?php wp_footer(); ?>
-
       <footer class="container container--footer">
         <div class="col col--three--quarters left cf">
           <div class="media">
@@ -40,6 +38,8 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-34521921-1', 'valleychurch.eu');
+    ga('require', 'linkid', 'linkid.js');
+    ga('require', 'displayfeatures');
     ga('send', 'pageview');
   </script>
   

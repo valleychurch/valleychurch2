@@ -30,7 +30,7 @@ get_header(); ?>
 
       function filter_where( $where = '' ) {
         // posts in the last 25 days (accounts for 4 weeks of messages)
-        $where .= " AND post_date > '" . date('Y-m-d', strtotime('-25 days')) . "'";
+        $where .= " AND post_date > '" . date('Y-m-d', strtotime('-35 days')) . "'";
         return $where;
       }
 

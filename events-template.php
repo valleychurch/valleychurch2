@@ -42,7 +42,7 @@ get_header(); ?>
 
       <?php if (has_post_thumbnail()){ ?>
       <div class="featured hisrc">
-        <img src="<?php echo($sm_img[0]); ?>" data-1x="<?php echo($md_img[0]); ?>" data-2x="<?php echo($lg_img[0]); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
+        <img src="<?php echo($sm_img[0]); ?>" data-1x="<?php echo($md_img[0]); ?>" data-2x="<?php echo($lg_img[0]); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="margin-bottom" />
       </div>
       <?php } ?>
 

@@ -87,7 +87,11 @@ img
     height: auto;
 }
 
-input,
+input[type=text],
+input[type=search],
+input[type=date],
+input[type=email],
+input[type=submit],
 select,
 option,
 optgroup,
@@ -97,6 +101,7 @@ textarea
     border: 1px solid $ui;
     padding: $base-size-fallback * 0.25;
     padding: $base-size * 0.25;
+    background: white;
 
     @media screen and (max-width: 30rem)
     {
@@ -104,13 +109,21 @@ textarea
     }
 }
 
-input,
+input[type=text],
+input[type=search],
+input[type=date],
+input[type=email],
+input[type=submit],
 textarea
 {
     -webkit-appearance: none;
 }
 
-input:focus,
+input[type=text]:focus,
+input[type=search]:focus,
+input[type=date]:focus,
+input[type=email]:focus,
+input[type=submit]:focus,
 textarea:focus
 {
     outline-color: $hero;

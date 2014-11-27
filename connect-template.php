@@ -5,13 +5,14 @@ Template Name: Connect Groups
 
 get_header(); ?>
 
-<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v=3&sensor=true"></script>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=true"></script>
 
 <?php 
   $type = 'connect';
   $args=array(
     'post_type' => $type,
-    'post_status' => 'publish'
+    'post_status' => 'publish',
+    'posts_per_page' => 1000
   );
   $temp = $wp_query;  // assign orginal query to temp variable for later use   
   $wp_query = null;
@@ -31,7 +32,6 @@ get_header(); ?>
       marker,
       pos,
       center = new google.maps.LatLng(53.733241, -2.662240);
-
   //Set up map
   function initialize() {
     mapOptions = {
@@ -50,23 +50,14 @@ get_header(); ?>
     
     //Create bounds (to auto-size the map)
     bounds = new google.maps.LatLngBounds();
-    
-    //Find user's location
-    myloc = new google.maps.Marker({
-      icon: new google.maps.MarkerImage(
-        '//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
-        new google.maps.Size(22,22),
-        new google.maps.Point(0,18),
-        new google.maps.Point(11,11)),
-      shadow: null,
-      zIndex: 999,
-      map: map
-    });
 
     var connectgroups = [
       <?php $i = 0; if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        <?php $info = get_the_content(); ?>
-        ['<?php the_title(); ?>','<?php echo $info; ?>',<?php echo the_field('cg_location'); ?>],
+        <?php
+        	$info = get_the_content();
+        	$loc = get_field("cg_location");
+    	?>
+        ['<?php the_title(); ?>','<?php echo $info; ?>',<?php echo $loc['lat']; ?>,<?php echo $loc['lng']; ?>],
       <?php $i++; endwhile; else : endif; ?>
       <?php wp_reset_query(); ?>
     ];
@@ -92,40 +83,6 @@ get_header(); ?>
     recenter();
   }
 
-  function myLocation() {
-    //Determine if geolocation is supported
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        myloc.setPosition(pos);
-        bounds.extend(pos);
-        map.fitBounds(bounds);
-        recenter();
-        info.setContent("<h3 class='delta no-margin-bottom'>You are here!</h3>");
-        info.open(map, myloc);
-        google.maps.event.addListener(myloc, 'click', function(){
-          info.setContent("<h3 class='delta no-margin-bottom'>You are here!</h3>");
-          info.open(map, myloc);
-        });
-      }, function() {
-        noGeoLoc(true);
-      });
-    }
-    else {
-      noGeoLoc(false);
-    }
-  }
-
-  function noGeoLoc(errorFlag) {
-    if (errorFlag) {
-      alert('We couldn\'t find your current location.');
-    }
-    
-    else {
-      alert('Your browser doesn\'t support geolocation.');
-    }
-  }
-
   function recenter() {
     google.maps.event.trigger(map, 'resize');
     map.setCenter(center);
@@ -138,27 +95,11 @@ get_header(); ?>
   google.maps.event.addDomListener(window, 'resize', debounce(recenter,200));
 
   $(document).ready(function() {
-    $('.my-location').click(function(e) {
-      e.preventDefault();
-      myLocation();
-    });
-    recenter();
+    //recenter();
   });
 </script>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-  <?php if(get_field('page_css')) { ?>
-    <style type="text/css">
-      <?php the_field('page_css'); ?>
-    </style>
-  <?php } ?>
-
-  <?php if (get_field('page_js')) { ?>
-    <script type="text/javascript">
-      <?php the_field('page_js'); ?>
-    </script>
-  <?php } ?>
 
   <?php
     $img_id = get_post_thumbnail_id($post->ID); // This gets just the ID of the img
@@ -185,7 +126,7 @@ get_header(); ?>
         </div>
 
         <h2>Interested in joining?</h2>
-        <?php echo do_shortcode("[contact-form-7 id=\"6385\" title=\"Connect Groups\"]"); ?>
+        <p>Please <a href="/contact">get in touch</a> if you're interested in joining a connect group!</p>
       </div>
     </article>
   </section>

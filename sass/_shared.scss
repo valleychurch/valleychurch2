@@ -113,11 +113,11 @@ hr
 .btn,
 .more-link
 {
-    background: $hero;
+    background: $hero !important;
     color: white;
     display: inline-block;
-    font-weight: 700;
-    padding: 5px 12px;
+    font-weight: 700 !important;
+    padding: 5px 12px !important;
     @include single-transition(background, 0.1s, ease-in-out);
     @include border-radius($base-border-radius);
     border: none;

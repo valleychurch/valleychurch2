@@ -5,7 +5,7 @@
 {
 	@extend .right;
 
-	@media screen and (max-width: 58rem)
+	@media screen and (max-width: 62rem)
 	{
 		display: none;
 	}
@@ -76,7 +76,7 @@
 				@include font-size(0.938);
 				@include padding(1.0625, 0.75, 1, 0.75);
 				display: block;
-				font-weight: 700;
+				font-weight: 500;
 				color: #FFF;
 
 				&:hover
@@ -155,7 +155,7 @@
 		{
 			@include padding(0, 0, 0, 0.75);
 			font-family: "FontAwesome";
-	    content: "\f0d7";
+	    	content: "\f0d7";
 		}
 
 		& > .menu-item > a.active:after
@@ -220,12 +220,12 @@
 		display: none;
 	}
 
-	@media screen and (min-width: 58rem)
+	@media screen and (min-width: 62rem)
 	{
 		display: none;
 	}
 
-	@media screen and (max-width: 58rem)
+	@media screen and (max-width: 62rem)
 	{
 		padding: $base-size-fallback $base-size-fallback * 0.9375 $base-size-fallback * 0.9375;
 		padding: $base-size $base-size * 0.9375 $base-size * 0.9375;

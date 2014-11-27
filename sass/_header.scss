@@ -28,7 +28,7 @@ header
 	padding: ($base-size-fallback * 0.5) 0;
 	padding: ($base-size * 0.5) 0;
 
-	@media screen and (max-width: 58rem)
+	@media screen and (max-width: 62rem)
 	{
 		float: none;
 	}
@@ -39,7 +39,7 @@ header
 	font-size: 0;
 	display: block;
 
-	@media screen and (max-width: 58rem)
+	@media screen and (max-width: 62rem)
 	{
 		margin: auto;
 		text-align: center;
@@ -60,7 +60,7 @@ header
 		max-width: $base-size-fallback * 3.5 !important;
 	}
 
-	@media screen and (max-width: 58rem)
+	@media screen and (max-width: 62rem)
 	{
 		float: none;
 		width: $base-size-fallback * 2;
@@ -83,12 +83,7 @@ header
     	height: 36px;
     }
 
- //    @media screen and (max-width: 62rem)
-	// {
-	// 	display: none;
-	// }
-
-    @media screen and (max-width: 58rem)
+    @media screen and (max-width: 62rem)
     {
     	float: none;
     	display: inline;
@@ -97,20 +92,3 @@ header
     	margin: 0.25rem 0 0 0.5rem;
     }
 }
-
-// .logo-word-stacked
-// {
-// 	@extend .left;
-// 	margin-top: 3px;
-// 	display: none;
-
-// 	@media screen and (max-width: 62rem)
-// 	{
-// 		display: block;
-// 	}
-
-// 	@media screen and (max-width: 58rem)
-// 	{
-// 		display: none;
-// 	}
-// }
