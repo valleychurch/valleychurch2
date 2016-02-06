@@ -7,7 +7,7 @@
   <article>
 
     <?php
-      $img_id = get_post_thumbnail_id($post->ID); // This gets just the ID of the img
+     $img_id = get_post_thumbnail_id($post->ID); // This gets just the ID of the img
       $sm_img = wp_get_attachment_image_src($img_id, 'medium');
       $md_img = wp_get_attachment_image_src($img_id, 'large');
       $lg_img = wp_get_attachment_image_src($img_id, 'full');
@@ -15,14 +15,14 @@
       $perm = get_permalink($post->ID);
     ?>
 
-    <?php if (has_post_thumbnail()){ ?>
-    <div class="featured hisrc">
-      <img src="<?php echo($sm_img[0]); ?>" data-1x="<?php echo($md_img[0]); ?>" data-2x="<?php echo($lg_img[0]); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
-    </div>
-    <?php } ?>
+    <?php //if (has_post_thumbnail()){ ?>
+    <!-- <div class="featured">
+      <img src="<?php //echo($image[0]); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
+    </div> -->
+    <?php //} ?>
 
-    <div class="content">
-      <span class="meta milli">
+    <div class="content content--wide">
+      <!-- <span class="meta milli">
         <span class="meta__category">
           <?php the_category(', '); ?>
         </span>
@@ -34,16 +34,22 @@
         <span class="meta__author">
           By <span class="meta__author__name"><?php the_author();?></span>
         </span>
-      </span>
-      <h1>
-        <?php the_title(); ?>
-      </h1>
-
-      <?php the_content(); ?>
+      </span> -->
+      <div class="media">
+        <?php if ( has_post_thumbnail() ) { ?>
+        <div class="media__img col--quarter hisrc">
+          <img src="<?php echo($sm_img[0]); ?>" data-1x="<?php echo($md_img[0]); ?>" data-2x="<?php echo($lg_img[0]); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
+        </div>
+        <?php } ?>
+        <div class="media__body col--three-quarters">
+          <h1>
+            <?php the_title(); ?>
+          </h1>
+          <?php the_content(); ?>
+        </div>
+      </div>
     </div>
   </article>
-
-  <hr/>
 
   <?php endwhile; else : ?>
 
@@ -54,10 +60,6 @@
   </div>
 
   <?php endif; ?>
-
-  <div class="comments content">
-    <?php comments_template(); ?>
-  </div>
 
 </section>
 

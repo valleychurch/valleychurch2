@@ -31,7 +31,8 @@ get_header(); ?>
       group,
       marker,
       pos,
-      center = new google.maps.LatLng(53.733241, -2.662240);
+      center = new google.maps.LatLng(53.733241, -2.662240),
+      scrollTrigger = false;
   //Set up map
   function initialize() {
     mapOptions = {
@@ -71,15 +72,14 @@ get_header(); ?>
         title: group[0],
         html: group[1]
       });
+      //console.log(group[1]);
       google.maps.event.addListener(marker, 'click', function() {
         info.setContent("<h2 class='delta no-margin-bottom'>" + this.title + "</h2>" + this.html);
         info.open(map, this);
       });
       bounds.extend(new google.maps.LatLng(group[2], group[3]));
     }
-    
-    //Fit map
-    map.fitBounds(bounds);
+
     recenter();
   }
 
@@ -89,13 +89,29 @@ get_header(); ?>
     map.fitBounds(bounds);
   }
 
-  google.maps.event.addDomListener(window, 'load', initialize);
-  google.maps.event.addDomListener(window, 'load', recenter);
-
-  google.maps.event.addDomListener(window, 'resize', debounce(recenter,200));
+  //google.maps.event.addDomListener(window, 'load', initialize);
+  //google.maps.event.addDomListener(window, 'resize', debounce(recenter,200));
 
   $(document).ready(function() {
-    //recenter();
+    console.log("docready");
+  });
+
+  $(window).load(function() {
+    console.log("winload");
+    initialize();
+    window.setTimeout(recenter, 1000);
+  });
+
+  $(window).resize(function() {
+    console.log("resize");
+    debounce(recenter,250);
+  });
+
+  $(window).scroll(function() {
+    if (!scrollTrigger) {
+      recenter();
+      scrollTrigger = true;
+    }
   });
 </script>
 
@@ -103,16 +119,18 @@ get_header(); ?>
 
   <?php
     $img_id = get_post_thumbnail_id($post->ID); // This gets just the ID of the img
-    $image = wp_get_attachment_image_src($img_id, $optional_size); // Get URL of the image, and size can be set here too (same as with get_the_post_thumbnail, I think)
+    $sm_img = wp_get_attachment_image_src($img_id, 'medium');
+    $md_img = wp_get_attachment_image_src($img_id, 'large');
+    $lg_img = wp_get_attachment_image_src($img_id, 'full');
     $alt_text = get_post_meta($img_id , '_wp_attachment_image_alt', true);
     $perm = get_permalink($post->ID);
   ?>
 
   <section class="container container--post">
     <article>
-      <?php if (has_post_thumbnail()){ ?>
-      <div class="featured">
-        <img src="<?php echo($image[0]); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
+      <?php if ( has_post_thumbnail() ) { ?>
+      <div class="featured hisrc">
+        <img src="<?php echo($sm_img[0]); ?>" data-1x="<?php echo($md_img[0]); ?>" data-2x="<?php echo($lg_img[0]); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
       </div>
       <?php } ?>
       <div class="content">

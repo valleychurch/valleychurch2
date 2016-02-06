@@ -6,7 +6,7 @@
 	background: white;
 	padding: ($base-size-fallback * 1.5) ($base-size-fallback * 0.6);
 	padding: ($base-size * 1.5) ($base-size * 0.6);
-	@include single-box-shadow(rgba(0,0,0,0.13), 0px, 1px, 3px);
+	@include single-box-shadow(0px, 1px, 3px, rgba(0,0,0,0.13));
 
 	// .col
 	// {
@@ -17,7 +17,7 @@
 	@media screen and (max-width: 50rem)
 	{
 		padding: 0;
-		@include single-box-shadow(rgba(0,0,0,0.0), 0px, 0px, 0px);
+		@include single-box-shadow(0px, 0px, 0px, rgba(0,0,0,0.0));
 	}
 }
 
@@ -99,41 +99,41 @@
 
 .home__button--about
 {
-	background-image: url('http://cdn2.valleychurch.eu/img/home_about.jpg');
+	background-image: url('http://valleychurch.eu/wp-content/themes/valleychurch2/img/home_about.jpg');
 
 	.ie8 &
 	{
-		background-image: url('http://cdn2.valleychurch.eu/img/home_about_ie.jpg');
+		background-image: url('http://valleychurch.eu/wp-content/themes/valleychurch2/img/home_about_ie.jpg');
 	}
 }
 
 .home__button--sundays
 {
-	background-image: url('http://cdn2.valleychurch.eu/img/home_sunday.jpg');
+	background-image: url('http://valleychurch.eu/wp-content/themes/valleychurch2/img/home_sunday.jpg');
 
 	.ie8 &
 	{
-		background-image: url('http://cdn2.valleychurch.eu/img/home_sunday_ie.jpg');
+		background-image: url('http://valleychurch.eu/wp-content/themes/valleychurch2/img/home_sunday_ie.jpg');
 	}
 }
 
 .home__button--pastors
 {
-	background-image: url('http://cdn2.valleychurch.eu/img/home_pastors.jpg');
+	background-image: url('http://valleychurch.eu/wp-content/themes/valleychurch2/img/home_pastors.jpg');
 
 	.ie8 &
 	{
-		background-image: url('http://cdn2.valleychurch.eu/img/home_pastors_ie.jpg');
+		background-image: url('http://valleychurch.eu/wp-content/themes/valleychurch2/img/home_pastors_ie.jpg');
 	}
 }
 
 .home__button--find
 {
-    background-image: url('http://cdn2.valleychurch.eu/img/home_find.jpg');
+    background-image: url('http://valleychurch.eu/wp-content/themes/valleychurch2/img/home_find.jpg');
 
     .ie8 &
 	{
-		background-image: url('http://cdn2.valleychurch.eu/img/home_find_ie.jpg');
+		background-image: url('http://valleychurch.eu/wp-content/themes/valleychurch2/img/home_find_ie.jpg');
 	}
 }
 

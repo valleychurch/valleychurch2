@@ -19,12 +19,7 @@ body
 	line-height: $base-line-height;
 	background: $bg;
 	@extend %full-height;
-
-	@media screen and (max-width: 50rem)
-	{
-		font-size: $base-size-fallback * 0.875;
-		font-size: $base-size * 0.875;
-	}
+	-webkit-font-smoothing: antialiased;
 }
 
 .page-wrap

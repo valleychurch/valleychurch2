@@ -21,13 +21,13 @@ function setMenu()
 $(document).ready(function () {
 
   var prevImg =
-    '<svg width="30" height="48" class="prev-btn">' + 
-      '<image xlink:href="http://cdn2.valleychurch.eu/img/icons/icon-prev.svg" src="http://cdn2.valleychurch.eu/img/icons/icon-prev.png" width="30" height="48" class="prev-btn" />' +
+    '<svg width="30" height="48" class="prev-btn">' +
+      '<image xlink:href="http://valleychurch.eu/wp-content/themes/valleychurch2/img/icons/icon-prev.svg" src="http://valleychurch.eu/wp-content/themes/valleychurch2/img/icons/icon-prev.png" width="30" height="48" class="prev-btn" />' +
     '</svg>';
 
   var nextImg =
     '<svg width="30" height="48" class="next-btn">' +
-      '<image xlink:href="http://cdn2.valleychurch.eu/img/icons/icon-next.svg" src="http://cdn2.valleychurch.eu/img/icons/icon-next.png" width="30" height="48" class="next-btn" />' +
+      '<image xlink:href="http://valleychurch.eu/wp-content/themes/valleychurch2/img/icons/icon-next.svg" src="http://valleychurch.eu/wp-content/themes/valleychurch2/img/icons/icon-next.png" width="30" height="48" class="next-btn" />' +
     '</svg>';
 
   $('.no-js').removeClass('no-js');

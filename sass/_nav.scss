@@ -28,7 +28,7 @@
 	backface-visibility: hidden;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
-	@include single-box-shadow(#111, -2px, 0px, 8px, -1px, inset);
+	@include single-box-shadow(-2px, 0px, 8px, -1px, #111, true);
 
 	/* Fallback for older browsers - first because of the cascade */
 	.no-csstransforms3d &
@@ -76,7 +76,7 @@
 				@include font-size(0.938);
 				@include padding(1.0625, 0.75, 1, 0.75);
 				display: block;
-				font-weight: 500;
+				font-weight: 400;
 				color: #FFF;
 
 				&:hover

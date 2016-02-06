@@ -3,7 +3,7 @@
           <div class="media">
             <a class="logo media__img" href="/" alt="Valley Church" title="Valley Church">
               <svg width="32" height="32" class="logo-mark-footer">
-                <image xlink:href="<?php echo valleycdn(); ?>/img/icons/icon.svg" src="<?php echo valleycdn(); ?>/img/icons/icon.png" width="100%" height="100%" class="logo-mark-footer"></image>
+                <image xlink:href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/icons/icon.svg" src="<?php bloginfo( 'stylesheet_directory' ); ?>/img/icons/icon.png" width="100%" height="100%" class="logo-mark-footer"></image>
               </svg>
             </a>
             <div class="copyright media__body">
@@ -18,30 +18,34 @@
       </footer>
 
     </div>
-    
+
   </div>
 
   <!-- Site JS -->
-  <script src="<?php echo valleycdn(); ?>/js/site.js"></script>
+  <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/site.js?v=2.8.0"></script>
+  <!--<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/trackomatic.js"></script>-->
+
+  <!-- WP footer -->
+  <?php wp_footer(); ?>
 
   <!-- IE fixes -->
   <!--[if lt IE 9]>
-    <script src="<?php echo valleycdn(); ?>/js/respond.js"></script>
-    <script src="<?php echo valleycdn(); ?>/js/rem.min.js"></script> 
+    <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/respond.js"></script>
+    <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/rem.min.js"></script>
   <![endif]-->
 
   <!-- Google Analytics -->
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    //(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    //(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    //m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    //})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-34521921-1', 'valleychurch.eu');
-    ga('require', 'linkid', 'linkid.js');
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview');
+    //ga('create', 'UA-34521921-1', 'valleychurch.eu');
+    //ga('require', 'displayfeatures');
+    //ga('require', 'linkid', 'linkid.js');
+    //ga('send', 'pageview');
   </script>
-  
+
 </body>
 </html>

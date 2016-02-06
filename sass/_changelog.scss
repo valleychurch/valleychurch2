@@ -1,20 +1,22 @@
 /*
-	Thanks to Harry Roberts of CSS Wizardy / inuitcss for a lot of what's in here (Reset, type sizing, OOCSS).
+  Thanks to Harry Roberts of CSS Wizardy / inuitcss for a lot of what's in here (Reset, type sizing, OOCSS).
 
-	Also now using an x.x.x versioning convention, where x.1 would be a major release (new feature) and x.x.1 would be a bugfix / minor change.
+  Also now using an x.x.x versioning convention, where x.1 would be a major release (new feature) and x.x.1 would be a bugfix / minor change.
 
-	25/06/14 - v2.6.3 - Changes to `font-weight` and `line-height` for h[1-6], added `margin-bottom` to events page
-	10/06/14 - v2.6.2 - Added new `Location` menu item
-	19/02/14 - v2.6.1 - Fixes for mobile devices and slimmed down header
-	24/01/14 - v2.6.0 - Added off canvas navigation for mobile, removed FastClick to support some Chrome for Android versions
-	20/01/14 - v2.5.1 - Removed ClickTale, CSS tidy up and compression
-	15/01/14 - v2.5.0 - Blog category pages, better readability of post meta, restructured h[1-6]s, removed related post functionality
-	03/01/14 - v2.4.1 - Bug fixes on transition to live site
-	03/01/14 - v2.4.0 - Redesign complete, transition to Sass complete
-	17/12/13 - v2.3.0 - Converting all CSS to Sass, redesign
-	22/11/13 - v2.2.0 - Redesigned header
-	16/09/13 - v2.1.0 - Connect groups mapping system added. Moved back to beta.vc.eu for sign off
-	31/07/13 - Moved onto live valleychurch.eu for testing
-	29/05/13 - Into beta testing phase, IE fixes
-	20/05/13 - Inital v2 setup on dev site
+  07/01/16 - v2.8.0 - Preparing for change to v3. Added extra image sizes and post types to `functions.php`
+  17/06/15 - v2.7.0 - Changed font weights, adding Proxima Nova, general tidy up
+  25/06/14 - v2.6.3 - Changes to `font-weight` and `line-height` for h[1-6], added `margin-bottom` to events page
+  10/06/14 - v2.6.2 - Added new `Location` menu item
+  19/02/14 - v2.6.1 - Fixes for mobile devices and slimmed down header
+  24/01/14 - v2.6.0 - Added off canvas navigation for mobile, removed FastClick to support some Chrome for Android versions
+  20/01/14 - v2.5.1 - Removed ClickTale, CSS tidy up and compression
+  15/01/14 - v2.5.0 - Blog category pages, better readability of post meta, restructured h[1-6]s, removed related post functionality
+  03/01/14 - v2.4.1 - Bug fixes on transition to live site
+  03/01/14 - v2.4.0 - Redesign complete, transition to Sass complete
+  17/12/13 - v2.3.0 - Converting all CSS to Sass, redesign
+  22/11/13 - v2.2.0 - Redesigned header
+  16/09/13 - v2.1.0 - Connect groups mapping system added. Moved back to beta.vc.eu for sign off
+  31/07/13 - Moved onto live valleychurch.eu for testing
+  29/05/13 - Into beta testing phase, IE fixes
+  20/05/13 - Inital v2 setup on dev site
 */

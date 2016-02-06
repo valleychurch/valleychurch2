@@ -190,7 +190,8 @@ header,
 
 /* line 22, ../sass/_shared.scss */
 audio {
-  max-width: 100%;
+  max-width: 100%
+  visibility: visible !important;
 }
 
 /* Default indentation value for lists etc. */

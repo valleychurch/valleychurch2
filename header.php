@@ -26,21 +26,20 @@
 
   <!-- CSS / link tags -->
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-  <link rel="dns-prefetch" href="//cdn2.valleychurch.eu" />
 
-  <link rel="stylesheet" href="<?php echo valleycdn(); ?>/style.css" />
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/style.css?v=2.8.0" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
   <!--[if IE 7]>
-  <link rel="stylesheet" type="text/css" href="<?php echo valleycdn(); ?>/font-awesome-ie7.min.css" />
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_directory' ); ?>/font-awesome-ie7.min.css" />
   <![endif]-->
 
-  <link rel="shortcut icon" href="<?php echo valleycdn(); ?>/img/icons/favicon.ico" />
-  <link rel="apple-touch-icon-precomposed" href="<?php echo valleycdn(); ?>/img/icons/apple-icon.png" />
-  <link rel="icon" sizes="192x192" href="<?php echo valleycdn(); ?>/img/icons/apple-icon.png" />
+  <link rel="shortcut icon" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/icons/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/icons/apple-touch-icon.png" />
+  <link rel="icon" sizes="192x192" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/icons/apple-touch-icon.png" />
 
   <!-- jQuery, Modernizr, Debounce -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   <script>
     function debounce(func, wait, immediate) {
       var result;
@@ -61,9 +60,8 @@
   </script>
 
   <!-- Typekit -->
-  <script src="//use.typekit.net/gga6pzn.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
-
+  <script src="//use.typekit.net/lwv4pjs.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <!-- WordPress head -->
   <?php wp_head(); ?>
 </head>
@@ -91,17 +89,15 @@
           <div class="logo-container cf">
             <a href="/" class="logo cf" alt="Valley Church" title="Valley Church">
               <svg class="logo-mark">
-                <image xlink:href="<?php echo valleycdn(); ?>/img/icons/icon.svg" src="<?php echo valleycdn(); ?>/img/icons/icon.png" width="100%" height="100%" class="logo-mark"></image>
+                <image xlink:href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/icons/icon.svg" src="<?php bloginfo( 'stylesheet_directory' ); ?>/img/icons/icon.png" width="100%" height="100%" class="logo-mark"></image>
               </svg>
               <svg width="180" height="28" class="logo-word">
-                <image xlink:href="<?php echo valleycdn(); ?>/img/logos/logo.svg" src="<?php echo valleycdn(); ?>/img/logos/logo.png" width="100%" height="100%" class="logo-word"></image>
+                <image xlink:href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/logos/logo.svg" src="<?php bloginfo( 'stylesheet_directory' ); ?>/img/logos/logo.png" width="100%" height="100%" class="logo-word"></image>
               </svg>
             </a>
           </div>
           <nav class="main-nav">
-            <?php wp_nav_menu( array(
-              'container' => false
-            ) ); ?>
+            <?php wp_nav_menu( array('container' => false) ); ?>
           </nav>
         </section>
       </header>
